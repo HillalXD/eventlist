@@ -20,15 +20,15 @@ const Header = () => {
         </SignedIn>
 
         <div className="flex w-32 justify-end gap-3">
-          <SignedIn>
-            <UserButton />
-            <MobileNav />
-          </SignedIn>
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>
+          <SignedIn>
+            <UserButton />
+            <MobileNav />
+          </SignedIn>
         </div>
       </div>
     </header>
