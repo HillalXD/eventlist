@@ -23,15 +23,18 @@ const EventDetails = async ({
 
   return (
     <>
-      <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl">
-          <Image
-            src={event.imageUrl}
-            alt="hero image"
-            width={1000}
-            height={1000}
-            className="h-full min-h-[300px] object-cover object-center"
-          />
+      <section className="flex justify-center bg-primary-60 bg-dotted-pattern bg-contain">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl justify-center">
+          <div className="flex justify-center align-middle mb-10">
+            <Image
+              src={event.imageUrl}
+              alt="hero image"
+              style={{ borderRadius: "5px" }}
+              width={1000}
+              height={1000}
+              className="h-full max-h-[400px] object-cover object-center items-center mt-[50px] br"
+            />
+          </div>
 
           <div className="flex w-full flex-col gap-8 p-5 md:p-10">
             <div className="flex flex-col gap-6">
@@ -49,7 +52,7 @@ const EventDetails = async ({
 
                 <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
                   by{" "}
-                  <span className="text-primary-500">
+                  <span className="text-primary-50">
                     {event.organizer.firstName} {event.organizer.lastName}
                   </span>
                 </p>
