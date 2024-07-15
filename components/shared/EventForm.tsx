@@ -43,7 +43,6 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     event && type === "Update"
       ? {
           ...event,
-
           startDateTime: new Date(event.startDateTime),
           endDateTime: new Date(event.endDateTime),
         }
@@ -109,6 +108,10 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
       }
     }
   }
+
+  const changeHandle = (date: Date, field) => {
+    field.onChange(date);
+  };
 
   return (
     <Form {...form}>
@@ -265,7 +268,9 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                     </p>
                     <DatePicker
                       selected={field.value}
-                      onChange={(date: Date) => field.onChange(date)}
+                      onChange={(event) => {
+                        (date: Date) => field.onChange(date), event;
+                      }}
                       showTimeSelect
                       timeInputLabel="Time:"
                       dateFormat="MM/dd/yyyy h:mm aa"
